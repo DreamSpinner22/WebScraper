@@ -3,6 +3,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 # Make a get request to retrieve webpage and pass through BeautifulSoup for parsing
 html_page = requests.get('http://books.toscrape.com')
 soup = BeautifulSoup(html_page.content, 'html.parser')
@@ -11,4 +12,5 @@ book_container = warning.nextSibling.nextSibling
 
 images = book_container.findAll('img')
 example = images[0]
-example
+
+print(example)
